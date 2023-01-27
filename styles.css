@@ -1,0 +1,16 @@
+body{
+    background-color: #121212;
+}
+#grid{
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background-color: purple;
+}
+.row{
+    border: solid;
+    border-color: white;
+    width: 25px;
+    height: 25px;
+    border-width: 1px;
+}
