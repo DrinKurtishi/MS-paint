@@ -7,10 +7,17 @@ body{
     height: 500px;
     background-color: purple;
 }
+.column{
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+}
 .row{
     border: solid;
     border-color: white;
-    width: 25px;
-    height: 25px;
+    height: auto;
+    width: 100%;
     border-width: 1px;
 }

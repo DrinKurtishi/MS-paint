@@ -1,5 +1,5 @@
-let rows = 16;
-let columns = 16;
+let rows = 128;
+let columns = 128;
 let grid = document.getElementById("grid");
 for (let i = 0; i < columns; i++)
     {
