@@ -18,8 +18,11 @@ body{
     height: auto;
     width: 100%;
     border: solid;
-    border-color: grey;
+    border-color: rgb(166, 166, 166);
     opacity: 50%;
-    border-width: 1px;
-    background-color: red;
+    border-width: 0px;
+    background-color: white;
+}
+#showSliderValue{
+    color: whitesmoke;
 }
