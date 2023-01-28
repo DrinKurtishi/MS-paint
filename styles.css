@@ -3,9 +3,9 @@ body{
 }
 #grid{
     display: flex;
-    width: 500px;
-    height: 500px;
-    background-color: purple;
+    width: 700px;
+    height: 700px;
+    background-color: white;
 }
 .column{
     display: flex;
@@ -15,9 +15,11 @@ body{
     width: 100%;
 }
 .row{
-    border: solid;
-    border-color: white;
     height: auto;
     width: 100%;
+    border: solid;
+    border-color: grey;
+    opacity: 50%;
     border-width: 1px;
+    background-color: red;
 }
