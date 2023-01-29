@@ -42,9 +42,31 @@ slider.addEventListener("input", () => {
         }
 });
 
+let flag = false;//to erase/not erase grid when user clicks grid button
 slider.addEventListener("mouseup", () => {//remove borders again when user stops changing grid
+    if(flag === false){//if user presses button to show grid do not erase it on rescale
+        let rows = document.getElementsByClassName('row');
+        for(let i = 0; i < rows.length; i++) {
+            rows[i].style.borderWidth = "0px";
+        }
+    }
+});
+
+let GridButton = document.getElementById('GridButton');
+
+GridButton.addEventListener('click', () => {
+    debugger;
+    flag = true;//prevents grid from unshwoing if button is pressed
     let rows = document.getElementsByClassName('row');
-    for(let i = 0; i < rows.length; i++) {
-        rows[i].style.borderWidth = "0px";
+    if(rows[1].style.borderWidth == "0px"){
+        for(let i = 0; i < rows.length; i++) {    
+            rows[i].style.borderWidth = "1px";
+        }
+    }
+    else{
+        flag = false;//allow borders to unshow if user chooses clear borders
+        for(let i = 0; i < rows.length; i++) {    
+            rows[i].style.borderWidth = "0px";
+        }
     }
 });
