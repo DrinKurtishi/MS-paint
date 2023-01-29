@@ -14,6 +14,7 @@ for (let i = 0; i < columns; i++)
             let row = document.createElement('div');
             row.className = 'row';
             column.appendChild(row);
+            row.style.borderWidth = "1px";
         }
         grid.appendChild(column);
     }
