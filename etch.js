@@ -1,8 +1,8 @@
 let slider = document.getElementById('mySlider');
 let sliderValue = document.getElementById('showSliderValue');
 //Print initial grid
-let rows = 32;
-let columns = 32;
+let rows = 16;
+let columns = 16;
 let grid = document.getElementById("grid");
 sliderValue.innerHTML = rows + "x" + columns;//print grid size
 for (let i = 0; i < columns; i++)
@@ -56,7 +56,6 @@ slider.addEventListener("mouseup", () => {//remove borders again when user stops
 let GridButton = document.getElementById('GridButton');
 
 GridButton.addEventListener('click', () => {
-    debugger;
     flag = true;//prevents grid from unshwoing if button is pressed
     let rows = document.getElementsByClassName('row');
     if(rows[1].style.borderWidth == "0px"){
@@ -71,3 +70,5 @@ GridButton.addEventListener('click', () => {
         }
     }
 });
+
+//coloring
