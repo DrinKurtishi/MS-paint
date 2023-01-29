@@ -82,17 +82,15 @@ function draw(){
     for (let i = 0; i < pixels.length; i++) {
         pixels[i].addEventListener('mousedown', () => {
             colorFlag = true;
+            pixels[i].style.backgroundColor = "black";
         });
         pixels[i].addEventListener('mouseup', () => {
             colorFlag = false;
         });
-        pixels[i].addEventListener('mouseover', () => {
-            if (colorFlag) {
+        pixels[i].addEventListener('mouseover', (e) => {
+            if (colorFlag && e.buttons === 1) {//to prevent accidental drawing when double click
                 pixels[i].style.backgroundColor = "black";
             }
-        });
-        pixels[i].addEventListener('click', () => {
-            pixels[i].style.backgroundColor = "black";
         });
     }
 }
