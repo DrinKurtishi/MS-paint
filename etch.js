@@ -18,13 +18,7 @@ for (let i = 0; i < columns; i++)
         }
         grid.appendChild(column);
     }
-    let pixels = document.getElementsByClassName('row');
-    for(let i = 0; i < pixels.length; i++)
-    {
-        pixels[i].addEventListener('mouseover', () => {
-            pixels[i].style.backgroundColor = "black";
-        })
-    }
+    draw();//use code for drawing
 //end of print initial grid
 
 //print new grid when user changes slider value
@@ -48,13 +42,7 @@ slider.addEventListener("input", () => {
             }
             grid.appendChild(column);
         }
-        let pixels = document.getElementsByClassName('row');
-    for(let i = 0; i < pixels.length; i++)
-    {
-        pixels[i].addEventListener('mouseover', () => {
-            pixels[i].style.backgroundColor = "black";
-        })
-    }
+    draw();//use code for drawing
 });
 
 let flag = false;//to erase/not erase grid when user clicks grid button
@@ -84,3 +72,27 @@ GridButton.addEventListener('click', () => {
         }
     }
 });
+
+function draw(){
+    //drawing
+    //only draws if the user clicks or hovers over a pixel while holding down mouse
+    let colorFlag = false;
+    let pixels = document.getElementsByClassName('row');
+
+    for (let i = 0; i < pixels.length; i++) {
+        pixels[i].addEventListener('mousedown', () => {
+            colorFlag = true;
+        });
+        pixels[i].addEventListener('mouseup', () => {
+            colorFlag = false;
+        });
+        pixels[i].addEventListener('mouseover', () => {
+            if (colorFlag) {
+                pixels[i].style.backgroundColor = "black";
+            }
+        });
+        pixels[i].addEventListener('click', () => {
+            pixels[i].style.backgroundColor = "black";
+        });
+    }
+}
