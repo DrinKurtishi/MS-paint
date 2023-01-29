@@ -45,7 +45,7 @@ slider.addEventListener("input", () => {
     draw();//use code for drawing
 });
 
-let flag = false;//to erase/not erase grid when user clicks grid button
+let flag = true;//to erase/not erase grid when user clicks grid button
 slider.addEventListener("mouseup", () => {//remove borders again when user stops changing grid
     if(flag === false){//if user presses button to show grid do not erase it on rescale
         let rows = document.getElementsByClassName('row');

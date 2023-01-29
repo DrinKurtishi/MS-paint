@@ -1,6 +1,5 @@
 body{
     background-color: #121212;
-    color: whitesmoke;
 }
 #grid{
     display: flex;
@@ -23,4 +22,7 @@ body{
     opacity: 50%;
     border-width: 0px;
     background-color: white;
+}
+#showSliderValue{
+    color: whitesmoke;
 }
