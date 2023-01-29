@@ -18,6 +18,13 @@ for (let i = 0; i < columns; i++)
         }
         grid.appendChild(column);
     }
+    let pixels = document.getElementsByClassName('row');
+    for(let i = 0; i < pixels.length; i++)
+    {
+        pixels[i].addEventListener('mouseover', () => {
+            pixels[i].style.backgroundColor = "black";
+        })
+    }
 //end of print initial grid
 
 //print new grid when user changes slider value
@@ -41,6 +48,13 @@ slider.addEventListener("input", () => {
             }
             grid.appendChild(column);
         }
+        let pixels = document.getElementsByClassName('row');
+    for(let i = 0; i < pixels.length; i++)
+    {
+        pixels[i].addEventListener('mouseover', () => {
+            pixels[i].style.backgroundColor = "black";
+        })
+    }
 });
 
 let flag = false;//to erase/not erase grid when user clicks grid button
@@ -70,5 +84,3 @@ GridButton.addEventListener('click', () => {
         }
     }
 });
-
-//coloring
