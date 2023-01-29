@@ -13,8 +13,10 @@ for (let i = 0; i < columns; i++)
         {
             let row = document.createElement('div');
             row.className = 'row';
-            column.appendChild(row);
+            row.draggable = false;
+            row.style.backgroundColor = "white";
             row.style.borderWidth = "1px";
+            column.appendChild(row);
         }
         grid.appendChild(column);
     }
@@ -26,7 +28,6 @@ slider.addEventListener("input", () => {
         rows = slider.value;
         columns = slider.value;
         let grid = document.getElementById("grid");
-
         grid.innerHTML = "";//clears previous grid
         sliderValue.innerHTML = slider.value + "x" + slider.value;//print grid size
     for (let i = 0; i < columns; i++)
@@ -38,6 +39,7 @@ slider.addEventListener("input", () => {
                 let row = document.createElement('div');//creates rows
                 row.className= 'row';
                 row.style.borderWidth = "1px";//add a grid when user resizes grid
+                row.style.backgroundColor = "white";
                 column.appendChild(row);
             }
             grid.appendChild(column);
@@ -94,3 +96,4 @@ function draw(){
         });
     }
 }
+
