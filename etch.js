@@ -77,8 +77,11 @@ GridButton.addEventListener('click', () => {
 let colorFlag = false;
 function draw(){
     //only draws if the user clicks or hovers over a pixel while holding down mouse
-    let pixels = document.getElementsByClassName('row');
+    
 
+    
+
+    let pixels = document.getElementsByClassName('row');
     for (let i = 0; i < pixels.length; i++) {
         pixels[i].addEventListener('mousedown', (e) => {
             e.preventDefault()//prevents drag and drop which stopped the drawing
@@ -95,10 +98,18 @@ function draw(){
             }
         });
     }
-    grid.addEventListener('mouseleave', () => {//turns off coloring on hover when user 
-        colorFlag = false;                    //leaves canvas while holding down mouse
-        console.log(colorFlag); 
-    });
 
+    grid.addEventListener('mouseover', (event) => {//if user enters grid with mouse clicked then enable drawing
+        if (event.buttons === 1) { // Check if left mouse button is down
+          colorFlag = true;////--> TODO, drawing on the first pixel after mouse enter doesnt work, fix < ----
+          console.log(colorFlag);
+        }
+      });
+      
+      grid.addEventListener('mouseleave', (event) => {//if user leaves grid with mouse clicked then disable drawing on hover
+        if (event.buttons === 1) { // Check if left mouse button is down
+          colorFlag = false; 
+        }
+      });
 }
 
