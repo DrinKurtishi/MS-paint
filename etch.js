@@ -1,8 +1,9 @@
 let slider = document.getElementById('mySlider');
 let sliderValue = document.getElementById('showSliderValue');
+
 //Print initial grid
-let rows = 16;
-let columns = 16;
+let rows = slider.value;
+let columns = slider.value;
 let grid = document.getElementById("grid");
 sliderValue.innerHTML = rows + "x" + columns;//print grid size
 for (let i = 0; i < columns; i++)
@@ -46,7 +47,6 @@ slider.addEventListener("input", () => {
         }
     draw();//use code for drawing
 });
-
 let flag = true;//to erase/not erase grid when user clicks grid button
 slider.addEventListener("mouseup", () => {//remove borders again when user stops changing grid
     if(flag === false){//if user presses button to show grid do not erase it on rescale
@@ -74,27 +74,31 @@ GridButton.addEventListener('click', () => {
         }
     }
 });
-
+let colorFlag = false;
 function draw(){
-    //drawing
     //only draws if the user clicks or hovers over a pixel while holding down mouse
-    let colorFlag = false;
     let pixels = document.getElementsByClassName('row');
 
     for (let i = 0; i < pixels.length; i++) {
         pixels[i].addEventListener('mousedown', (e) => {
-            e.preventDefault()
+            e.preventDefault()//prevents drag and drop which stopped the drawing
             colorFlag = true;
             pixels[i].style.backgroundColor = "black";
         });
         pixels[i].addEventListener('mouseup', () => {
             colorFlag = false;
         });
+
         pixels[i].addEventListener('mouseover', () => {
             if (colorFlag) {
                 pixels[i].style.backgroundColor = "black";
             }
         });
     }
+    grid.addEventListener('mouseleave', () => {//turns off coloring on hover when user 
+        colorFlag = false;                    //leaves canvas while holding down mouse
+        console.log(colorFlag); 
+    });
+
 }
 
