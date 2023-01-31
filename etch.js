@@ -75,15 +75,15 @@ GridButton.addEventListener('click', () => {
     }
 });
 let colorFlag = false;
+
 function draw(){
     //only draws if the user clicks or hovers over a pixel while holding down mouse
-
     let pixels = document.getElementsByClassName('row');
     for (let i = 0; i < pixels.length; i++) {
         pixels[i].addEventListener('mousedown', (e) => {
             e.preventDefault()//prevents drag and drop which stopped the drawing
             colorFlag = true;
-            pixels[i].style.backgroundColor = "black";
+            pixels[i].style.backgroundColor = color;
         });
         pixels[i].addEventListener('mouseup', () => {
             colorFlag = false;
@@ -91,14 +91,14 @@ function draw(){
 
         pixels[i].addEventListener('mouseover', () => {
             if (colorFlag) {
-                pixels[i].style.backgroundColor = "black";
+                pixels[i].style.backgroundColor = color;
             }
         });
     }
 
     grid.addEventListener('mouseenter', (event) => {//if user enters grid with mouse clicked then enable drawing
         if (event.buttons === 1) { // Check if left mouse button is down
-          colorFlag = true;////--> TODO, drawing on the first pixel after mouse enter doesnt work, fix < ----
+          colorFlag = true;////--> TODO, drawing on the first pixel after mouse enter doesnt work, fix <----
           console.log(colorFlag);
         }
       });
@@ -107,6 +107,24 @@ function draw(){
         if (event.buttons === 1) { // Check if left mouse button is down
           colorFlag = false; 
         }
+        console.log(colorFlag);
       });
 }
+
+//COLORING
+
+let greenColor = document.getElementById('greenColor');
+let redColor = document.getElementById('redColor');
+let blackColor = document.getElementById('blackColor')
+
+let color = "black";
+greenColor.addEventListener('click', () => {
+    color = greenColor.value;
+});
+redColor.addEventListener('click', () => {
+    color = redColor.value;
+});
+blackColor.addEventListener('click', () => {
+    color = blackColor.value;
+});
 
