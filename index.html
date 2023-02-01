@@ -9,18 +9,31 @@
     <title>Etch a sketch</title>
 </head>
 <body>
-    <div id="showSliderValue"></div>
-    <div class="slidecontainer">
-        <input type="range" min="8" max="64" value="16" class="slider" id="mySlider">
+    <div class="header">
+        <div id="title"><h1>Pixel art app</h1></div>
     </div>
-    <div  class="GridButton">
-        <button id="GridButton">show/hide Grid</button>
+    <div class="body">
+        <div class="tools">
+            <div id="showSliderValue"></div>
+            <div class="slidecontainer">
+                <input type="range" min="8" max="64" value="16" class="slider" id="mySlider">
+            </div>
+            <div  class="GridButton">
+                <button id="GridButton">show/hide Grid</button>
+            </div>
+            <div class="colorbuttons-container">
+                <button class="colorbuttons" id="greenColor" value="green"></button>
+                <button class="colorbuttons" id="redColor" value="red"></button>
+                <button class="colorbuttons" id="blackColor" value="black"></button>
+                <button class="colorbuttons" id="brownColor" value="DarkGoldenRod"></button>
+                <button class="colorbuttons" id="blueColor" value="CornflowerBlue"></button>
+                <button class="colorbuttons" id="yellowColor" value="Gold"></button>
+                <button class="colorbuttons" id="skinColor" value="Moccasin"></button>
+                <button class="colorbuttons" id="whiteColor" value="white"></button>
+                <input type="color" class="colorbuttons" id="anyColor" value="#121212"> <!--TODO- fix style of this button and make the color change IMMEDIATELY !!!!!!!!!!!!!-->
+            </div>
+        </div>
+        <div id="grid"></div>
     </div>
-    <div class="colorButtons">
-        <button id="greenColor" value="green">green</button>
-        <button id="redColor" value="red">red</button>
-        <button id="blackColor" value="black">black</button>
-    </div>
-    <div class="Grid"><div id="grid"></div></div>
 </body>
 </html>

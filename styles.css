@@ -1,6 +1,10 @@
 body{
     background-color: #121212;
 }
+.body{
+    display: flex;
+    justify-content: space-between;
+}
 #grid{
     display: flex;
     width: 750px;
@@ -21,6 +25,56 @@ body{
     border-width: 0px;
     
 }
-#showSliderValue{
+.header{
+    display: flex;
+    justify-content: center;
+}
+#title{
+    font-size: 15px;
+}
+#showSliderValue, .header{
     color: whitesmoke;
+}
+#greenColor{
+    background-color: green;
+}
+#redColor{
+    background-color: red;
+}
+#blackColor{
+    background-color: black;
+}
+#brownColor{
+    background-color: darkgoldenrod;
+}
+#blueColor{
+    background-color: cornflowerblue;
+}
+#yellowColor{
+    background-color: gold;
+}
+#skinColor{
+    background-color: moccasin;
+}
+#whiteColor{
+    background-color: white;
+}
+.colorbuttons{
+    align-items: center;
+    padding: 15px;
+    border: solid;
+    border-color: grey;
+}
+.colorbuttons-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#anyColor{
+    border: none;
+    border-color: blue;
+    border-width: 5px;
+    width: 32px;
+    height: 32px;
+    padding: 0px;
 }

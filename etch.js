@@ -107,15 +107,21 @@ function draw(){
         if (event.buttons === 1) { // Check if left mouse button is down
           colorFlag = false; 
         }
-        console.log(colorFlag);
       });
 }
 
 //COLORING
 
+
 let greenColor = document.getElementById('greenColor');
 let redColor = document.getElementById('redColor');
 let blackColor = document.getElementById('blackColor')
+let brownColor = document.getElementById('brownColor');
+let blueColor = document.getElementById('blueColor');
+let yellowColor = document.getElementById('yellowColor');
+let skinColor = document.getElementById('skinColor');
+let whiteColor = document.getElementById('whiteColor');
+let anyColor = document.getElementById('anyColor');
 
 let color = "black";
 greenColor.addEventListener('click', () => {
@@ -126,5 +132,23 @@ redColor.addEventListener('click', () => {
 });
 blackColor.addEventListener('click', () => {
     color = blackColor.value;
+});
+brownColor.addEventListener('click', () => {
+    color = brownColor.value;
+});
+blueColor.addEventListener('click', () => {
+    color = blueColor.value;
+})
+yellowColor.addEventListener('click', () => {
+    color = yellowColor.value;
+});
+skinColor.addEventListener('click', () => {
+    color = skinColor.value;
+});
+whiteColor.addEventListener('click', () => {
+    color = whiteColor.value;
+});
+anyColor.addEventListener('change', () => {
+    color = anyColor.value;
 });
 
