@@ -61,20 +61,27 @@ body{
 }
 .colorbuttons{
     align-items: center;
-    padding: 15px;
+    padding: 13px;
+    width: 30px;
+    height: 30px;
     border: solid;
+    cursor: pointer;
+    border-width: 1px;
     border-color: grey;
 }
 .colorbuttons-container{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
     gap: 5px;
 }
-#anyColor{
-    border: none;
-    border-color: blue;
-    border-width: 5px;
-    width: 32px;
-    height: 32px;
-    padding: 0px;
+
+input[type="color"] {
+    background-image: url(images/colorpalette.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+input[type="color"]::-webkit-color-swatch{
+    visibility: hidden;
 }
