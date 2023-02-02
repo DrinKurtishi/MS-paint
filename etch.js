@@ -113,41 +113,121 @@ function draw(){
 //COLORING
 
 
-let greenColor = document.getElementById('greenColor');
-let redColor = document.getElementById('redColor');
-let blackColor = document.getElementById('blackColor')
-let brownColor = document.getElementById('brownColor');
-let blueColor = document.getElementById('blueColor');
-let yellowColor = document.getElementById('yellowColor');
-let skinColor = document.getElementById('skinColor');
-let whiteColor = document.getElementById('whiteColor');
+let black = document.getElementById('black');
+let darkGray = document.getElementById('darkGray');
+let maroon = document.getElementById('maroon');
+let olive = document.getElementById('olive');
+let green = document.getElementById('green');
+let teal = document.getElementById('teal');
+let navy = document.getElementById('navy');
+let purple = document.getElementById('purple');
+let olive2 = document.getElementById('olive2');
+let navy2 = document.getElementById('navy2');
+let lightBlue = document.getElementById('lightBlue');
+let navy3 = document.getElementById('navy3');
+let navy4 = document.getElementById('navy4');
+let brown = document.getElementById('brown');
+let white = document.getElementById('white');
+let lightGray = document.getElementById('lightGray');
+let red = document.getElementById('red');
+let yellow = document.getElementById('yellow');
+let lime = document.getElementById('lime');
+let blue = document.getElementById('blue');
+let pink = document.getElementById('pink');
+let lighterBlue = document.getElementById('lighterBlue');
+let lightYellow = document.getElementById('lightYellow');
+let lightGreen = document.getElementById('lightGreen');
+let aqua = document.getElementById('aqua');
+let lightPurple = document.getElementById('lightPurple');
+let hotPink = document.getElementById('hotPink');
+let coral = document.getElementById('coral');
 let anyColor = document.getElementById('anyColor');
 
-let color = "black";
-greenColor.addEventListener('click', () => {
-    color = greenColor.value;
+let color = "black";//default color
+black.addEventListener('click', () => {
+    color = black.value;
 });
-redColor.addEventListener('click', () => {
-    color = redColor.value;
+darkGray.addEventListener('click', () => {
+    color = darkGray.value;
 });
-blackColor.addEventListener('click', () => {
-    color = blackColor.value;
+maroon.addEventListener('click', () => {
+    color = maroon.value;
 });
-brownColor.addEventListener('click', () => {
-    color = brownColor.value;
+olive.addEventListener('click', () => {
+    color = olive.value;
 });
-blueColor.addEventListener('click', () => {
-    color = blueColor.value;
+green.addEventListener('click', () => {
+    color = green.value;
 })
-yellowColor.addEventListener('click', () => {
-    color = yellowColor.value;
+teal.addEventListener('click', () => {
+    color = teal.value;
 });
-skinColor.addEventListener('click', () => {
-    color = skinColor.value;
+navy.addEventListener('click', () => {
+    color = navy.value;
 });
-whiteColor.addEventListener('click', () => {
-    color = whiteColor.value;
+purple.addEventListener('click', () => {
+    color = purple.value;
 });
+olive2.addEventListener('click', () => {
+    color = olive2.value;
+});
+navy2.addEventListener('click', () => {
+    color = navy2.value;
+});
+lightBlue.addEventListener('click', () => {
+    color = lightBlue.value;
+});
+navy3.addEventListener('click', () => {
+    color = navy3.value;
+});
+navy4.addEventListener('click', () => {
+    color = navy4.value;
+});
+brown.addEventListener('click', () => {
+    color = brown.value;
+});
+white.addEventListener('click', () => {
+    color = white.value;
+})
+lightGray.addEventListener('click', () => {
+    color = lightGray.value;
+})
+red.addEventListener('click', () => {
+    color = red.value;
+});
+yellow.addEventListener('click', () => {
+    color = yellow.value;
+})
+lime.addEventListener('click', () => {
+    color = lime.value;
+});
+blue.addEventListener('click', () => {
+    color = blue.value;
+});
+pink.addEventListener('click', () => {
+    color = pink.value;
+});
+lighterBlue.addEventListener('click', () => {
+    color = lighterBlue.value;
+});
+lightYellow.addEventListener('click', () => {
+    color = lightYellow.value;
+});
+lightGreen.addEventListener('click', () => {
+    color = lightGreen.value;
+});
+aqua.addEventListener('click', () => {
+    color = aqua.value;
+});
+lightPurple.addEventListener('click', () => {
+    color = lightPurple.value;
+});
+hotPink.addEventListener('click', () => {
+    color = hotPink.value;
+})
+coral.addEventListener('click', () => {
+    color = coral.value;
+})
 anyColor.addEventListener('change', () => {
     color = anyColor.value;
 });
