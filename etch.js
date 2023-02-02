@@ -75,7 +75,6 @@ GridButton.addEventListener('click', () => {
     }
 });
 let colorFlag = false;
-
 function draw(){
     //only draws if the user clicks or hovers over a pixel while holding down mouse
     let pixels = document.getElementsByClassName('row');
@@ -99,7 +98,6 @@ function draw(){
     grid.addEventListener('mouseenter', (event) => {//if user enters grid with mouse clicked then enable drawing
         if (event.buttons === 1) { // Check if left mouse button is down
           colorFlag = true;////--> TODO, drawing on the first pixel after mouse enter doesnt work, fix <----
-          console.log(colorFlag);
         }
       });
       
@@ -111,8 +109,6 @@ function draw(){
 }
 
 //COLORING
-
-
 let black = document.getElementById('black');
 let darkGray = document.getElementById('darkGray');
 let maroon = document.getElementById('maroon');
@@ -158,7 +154,7 @@ olive.addEventListener('click', () => {
 });
 green.addEventListener('click', () => {
     color = green.value;
-})
+});
 teal.addEventListener('click', () => {
     color = teal.value;
 });
@@ -188,16 +184,16 @@ brown.addEventListener('click', () => {
 });
 white.addEventListener('click', () => {
     color = white.value;
-})
+});
 lightGray.addEventListener('click', () => {
     color = lightGray.value;
-})
+});
 red.addEventListener('click', () => {
     color = red.value;
 });
 yellow.addEventListener('click', () => {
     color = yellow.value;
-})
+});
 lime.addEventListener('click', () => {
     color = lime.value;
 });
@@ -224,11 +220,10 @@ lightPurple.addEventListener('click', () => {
 });
 hotPink.addEventListener('click', () => {
     color = hotPink.value;
-})
+});
 coral.addEventListener('click', () => {
     color = coral.value;
-})
+});
 anyColor.addEventListener('change', () => {
     color = anyColor.value;
 });
-
