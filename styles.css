@@ -147,3 +147,15 @@ input[type="color"] {
 input[type="color"]::-webkit-color-swatch{
     visibility: hidden;
 }
+.color-swatches{
+    width: 70px;
+    height: 70px;
+    border: solid;
+    background-color: white;
+}
+#foreground{
+    width: 35px;
+    height: 35px;
+    border: solid;
+    border-color: grey;
+}
