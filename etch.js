@@ -15,7 +15,7 @@ for (let i = 0; i < columns; i++)
             let row = document.createElement('div');
             row.className = 'row';
             row.draggable = false;
-            row.style.backgroundColor = "white";
+            row.style.backgroundColor = "black";
             row.style.borderWidth = "1px";
             column.appendChild(row);
         }
@@ -40,7 +40,7 @@ slider.addEventListener("input", () => {
                 let row = document.createElement('div');//creates rows
                 row.className= 'row';
                 row.style.borderWidth = "1px";//add a grid when user resizes grid
-                row.style.backgroundColor = "white";
+                row.style.backgroundColor = "black";
                 column.appendChild(row);
             }
             grid.appendChild(column);
@@ -83,8 +83,6 @@ function draw(){
             e.preventDefault()//prevents drag and drop which stopped the drawing
             colorFlag = true;
             pixels[i].style.backgroundColor = color;
-            
-
         });
         pixels[i].addEventListener('mouseup', () => {
             colorFlag = false;
@@ -143,9 +141,11 @@ let coral = document.getElementById('coral');
 let swatch = document.getElementById('foreground');
 let anyColor = document.getElementById('anyColor');
 
+//optimised code for selecting colors
 
 let color = "black";//default color
-foreground.style.backgroundColor = color;
+foreground.style.backgroundColor = color;//swatch color
+
 black.addEventListener('click', () => {
     color = black.value;
     foreground.style.backgroundColor = color;
@@ -256,9 +256,11 @@ hotPink.addEventListener('click', () => {
 });
 coral.addEventListener('click', () => {
     color = coral.value;
-    foreground.style.backgroundColor = color;
 });
-anyColor.addEventListener('input', () => {
+
+anyColor.addEventListener('input', () => {//for the color picker
     color = anyColor.value;
     foreground.style.backgroundColor = color;
 });
+
+let bgColor = document.getElementById('background-color');

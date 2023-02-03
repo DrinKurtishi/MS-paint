@@ -151,11 +151,12 @@ input[type="color"]::-webkit-color-swatch{
     width: 70px;
     height: 70px;
     border: solid;
-    background-color: white;
+    background-color: grey;
+    padding: 5px;
 }
 #foreground{
     width: 35px;
     height: 35px;
     border: solid;
-    border-color: grey;
+    border-color: white;
 }
