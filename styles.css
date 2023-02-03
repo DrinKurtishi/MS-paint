@@ -119,11 +119,6 @@ body{
 #coral{
     background-color: rgb(255,128,64);
 }
-#darkener{
-    background-image: url(images/darkener.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 .colorbuttons{
     align-items: center;
     width: 25px;
