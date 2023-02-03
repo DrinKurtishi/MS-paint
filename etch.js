@@ -83,6 +83,8 @@ function draw(){
             e.preventDefault()//prevents drag and drop which stopped the drawing
             colorFlag = true;
             pixels[i].style.backgroundColor = color;
+            
+
         });
         pixels[i].addEventListener('mouseup', () => {
             colorFlag = false;
@@ -91,6 +93,7 @@ function draw(){
         pixels[i].addEventListener('mouseover', () => {
             if (colorFlag) {
                 pixels[i].style.backgroundColor = color;
+                swatch.style.backgroundColor = color;
             }
         });
     }
@@ -137,93 +140,125 @@ let aqua = document.getElementById('aqua');
 let lightPurple = document.getElementById('lightPurple');
 let hotPink = document.getElementById('hotPink');
 let coral = document.getElementById('coral');
+let swatch = document.getElementById('foreground');
 let anyColor = document.getElementById('anyColor');
 
+
 let color = "black";//default color
+foreground.style.backgroundColor = color;
 black.addEventListener('click', () => {
     color = black.value;
+    foreground.style.backgroundColor = color;
 });
 darkGray.addEventListener('click', () => {
     color = darkGray.value;
+    foreground.style.backgroundColor = color;
 });
 maroon.addEventListener('click', () => {
     color = maroon.value;
+    foreground.style.backgroundColor = color;
 });
 olive.addEventListener('click', () => {
     color = olive.value;
+    foreground.style.backgroundColor = color;
 });
 green.addEventListener('click', () => {
     color = green.value;
+    foreground.style.backgroundColor = color;
 });
 teal.addEventListener('click', () => {
     color = teal.value;
+    foreground.style.backgroundColor = color;
 });
 navy.addEventListener('click', () => {
     color = navy.value;
+    foreground.style.backgroundColor = color;
 });
 purple.addEventListener('click', () => {
     color = purple.value;
+    foreground.style.backgroundColor = color;
 });
 olive2.addEventListener('click', () => {
     color = olive2.value;
+    foreground.style.backgroundColor = color;
 });
 navy2.addEventListener('click', () => {
     color = navy2.value;
+    foreground.style.backgroundColor = color;
 });
 lightBlue.addEventListener('click', () => {
     color = lightBlue.value;
+    foreground.style.backgroundColor = color;
 });
 navy3.addEventListener('click', () => {
     color = navy3.value;
+    foreground.style.backgroundColor = color;
 });
 navy4.addEventListener('click', () => {
     color = navy4.value;
+    foreground.style.backgroundColor = color;
 });
 brown.addEventListener('click', () => {
     color = brown.value;
+    foreground.style.backgroundColor = color;
 });
 white.addEventListener('click', () => {
     color = white.value;
+    foreground.style.backgroundColor = color;
 });
 lightGray.addEventListener('click', () => {
     color = lightGray.value;
+    foreground.style.backgroundColor = color;
 });
 red.addEventListener('click', () => {
     color = red.value;
+    foreground.style.backgroundColor = color;
 });
 yellow.addEventListener('click', () => {
     color = yellow.value;
+    foreground.style.backgroundColor = color;
 });
 lime.addEventListener('click', () => {
     color = lime.value;
+    foreground.style.backgroundColor = color;
 });
 blue.addEventListener('click', () => {
     color = blue.value;
+    foreground.style.backgroundColor = color;
 });
 pink.addEventListener('click', () => {
     color = pink.value;
+    foreground.style.backgroundColor = color;
 });
 lighterBlue.addEventListener('click', () => {
     color = lighterBlue.value;
+    foreground.style.backgroundColor = color;
 });
 lightYellow.addEventListener('click', () => {
     color = lightYellow.value;
+    foreground.style.backgroundColor = color;
 });
 lightGreen.addEventListener('click', () => {
     color = lightGreen.value;
+    foreground.style.backgroundColor = color;
 });
 aqua.addEventListener('click', () => {
     color = aqua.value;
+    foreground.style.backgroundColor = color;
 });
 lightPurple.addEventListener('click', () => {
     color = lightPurple.value;
+    foreground.style.backgroundColor = color;
 });
 hotPink.addEventListener('click', () => {
     color = hotPink.value;
+    foreground.style.backgroundColor = color;
 });
 coral.addEventListener('click', () => {
     color = coral.value;
+    foreground.style.backgroundColor = color;
 });
-anyColor.addEventListener('change', () => {
+anyColor.addEventListener('input', () => {
     color = anyColor.value;
+    foreground.style.backgroundColor = color;
 });
