@@ -141,7 +141,7 @@ let lightPurple = document.getElementById('lightPurple');
 let hotPink = document.getElementById('hotPink');
 let coral = document.getElementById('coral');
 let swatch = document.getElementById('foreground');
-let bgswatch = document.getElementById('background')
+let bgswatch = document.getElementById('background');
 let anyColor = document.getElementById('anyColor');
 
 
@@ -487,7 +487,7 @@ bgColor = white.value;//default background color
 function changeBackgroundColor(){
     let rows = document.getElementsByClassName('row');
     for(let i = 0; i < rows.length; i++) {    //changes bgColor of background
-        if(rows[i].id == "0"){
+        if(rows[i].id == "0"){//if div uncolored then color to bgColor
             rows[i].style.backgroundColor = bgColor;
         }
     }
