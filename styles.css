@@ -163,7 +163,7 @@ input[type="color"]::-webkit-color-swatch{
 .fg-container {
     position: relative;
     right: -5px;
-    bottom: -4px;
+    bottom: -5px;
     display: inline-block;
   }
 #foreground{
@@ -172,8 +172,8 @@ input[type="color"]::-webkit-color-swatch{
 } 
 .bg-container {
     position: relative;
-    top: -17px;
-    right: -26px;
+    top: -20px;
+    right: -25px;
     display: inline-block;
   }
   
