@@ -160,3 +160,22 @@ input[type="color"]::-webkit-color-swatch{
     border: solid;
     border-color: rgb(77, 77, 77);
 }
+.fg-container {
+    position: relative;
+    right: -5px;
+    bottom: -4px;
+    display: inline-block;
+  }
+#foreground{
+    position: relative;
+    z-index: 1;
+} 
+.bg-container {
+    position: relative;
+    top: -17px;
+    right: -26px;
+    display: inline-block;
+  }
+  
+ 
+
