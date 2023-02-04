@@ -478,11 +478,9 @@ let bgColor = document.getElementById('background-color');
 bgColor.addEventListener('click', () => {
     if(bgColorFlag == false){
         bgColorFlag = true;
-        console.log(bgColorFlag);
     }
     else{
         bgColorFlag = false;
-        console.log(bgColorFlag);
     }
 });
 
