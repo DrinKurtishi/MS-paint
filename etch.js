@@ -1,6 +1,7 @@
 let slider = document.getElementById('mySlider');
 let sliderValue = document.getElementById('showSliderValue');
-
+let backgroundcolor = "black";//default color
+foreground.style.backgroundColor = backgroundcolor;//swatch color
 //Print initial grid
 let rows = slider.value;
 let columns = slider.value;
@@ -14,8 +15,8 @@ for (let i = 0; i < columns; i++)
         {
             let row = document.createElement('div');
             row.className = 'row';
-            row.draggable = false;
-            row.style.backgroundColor = "black";
+            row.id = '0';//to differentiate between background color and colored divs
+            row.style.backgroundColor = backgroundcolor;
             row.style.borderWidth = "1px";
             column.appendChild(row);
         }
@@ -39,8 +40,9 @@ slider.addEventListener("input", () => {
             {
                 let row = document.createElement('div');//creates rows
                 row.className= 'row';
+                row.id = '0';//to differentiate between background color and colored divs
                 row.style.borderWidth = "1px";//add a grid when user resizes grid
-                row.style.backgroundColor = "black";
+                row.style.backgroundColor = backgroundcolor;
                 column.appendChild(row);
             }
             grid.appendChild(column);
@@ -83,6 +85,8 @@ function draw(){
             e.preventDefault()//prevents drag and drop which stopped the drawing
             colorFlag = true;
             pixels[i].style.backgroundColor = color;
+            pixels[i].id = '1';//differentiate between a colored div and background color
+            swatch.style.backgroundColor = color;
         });
         pixels[i].addEventListener('mouseup', () => {
             colorFlag = false;
@@ -91,7 +95,7 @@ function draw(){
         pixels[i].addEventListener('mouseover', () => {
             if (colorFlag) {
                 pixels[i].style.backgroundColor = color;
-                swatch.style.backgroundColor = color;
+                pixels[i].id = '1';//differentiate between a colored div and background color
             }
         });
     }
@@ -139,128 +143,355 @@ let lightPurple = document.getElementById('lightPurple');
 let hotPink = document.getElementById('hotPink');
 let coral = document.getElementById('coral');
 let swatch = document.getElementById('foreground');
+let bgswatch = document.getElementById('background')
 let anyColor = document.getElementById('anyColor');
 
-//optimised code for selecting colors
 
-let color = "black";//default color
+let color = "white";//default pen color
 foreground.style.backgroundColor = color;//swatch color
 
 black.addEventListener('click', () => {
-    color = black.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = black.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = black.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 darkGray.addEventListener('click', () => {
-    color = darkGray.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = darkGray.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = darkGray.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 maroon.addEventListener('click', () => {
-    color = maroon.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = maroon.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = maroon.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 olive.addEventListener('click', () => {
-    color = olive.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = olive.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = olive.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 green.addEventListener('click', () => {
-    color = green.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = green.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = green.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 teal.addEventListener('click', () => {
-    color = teal.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = teal.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = teal.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 navy.addEventListener('click', () => {
-    color = navy.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = navy.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = navy.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 purple.addEventListener('click', () => {
-    color = purple.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = purple.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = purple.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 olive2.addEventListener('click', () => {
-    color = olive2.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = olive2.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = olive2.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 navy2.addEventListener('click', () => {
-    color = navy2.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = navy2.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = navy2.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 lightBlue.addEventListener('click', () => {
-    color = lightBlue.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = lightBlue.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = lightBlue.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 navy3.addEventListener('click', () => {
-    color = navy3.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = navy3.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = navy3.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 navy4.addEventListener('click', () => {
-    color = navy4.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = navy4.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = navy4.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 brown.addEventListener('click', () => {
-    color = brown.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = brown.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = brown.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 white.addEventListener('click', () => {
-    color = white.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = white.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = white.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 lightGray.addEventListener('click', () => {
-    color = lightGray.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = lightGray.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = lightGray.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 red.addEventListener('click', () => {
-    color = red.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = red.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = red.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 yellow.addEventListener('click', () => {
-    color = yellow.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = yellow.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = yellow.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 lime.addEventListener('click', () => {
-    color = lime.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = lime.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = lime.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 blue.addEventListener('click', () => {
-    color = blue.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = blue.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = blue.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 pink.addEventListener('click', () => {
-    color = pink.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = pink.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = pink.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 lighterBlue.addEventListener('click', () => {
-    color = lighterBlue.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = lighterBlue.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = lighterBlue.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 lightYellow.addEventListener('click', () => {
-    color = lightYellow.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = lightYellow.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = lightYellow.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 lightGreen.addEventListener('click', () => {
-    color = lightGreen.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = lightGreen.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = lightGreen.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 aqua.addEventListener('click', () => {
-    color = aqua.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = aqua.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = aqua.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 lightPurple.addEventListener('click', () => {
-    color = lightPurple.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = lightPurple.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = lightPurple.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 hotPink.addEventListener('click', () => {
-    color = hotPink.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = hotPink.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = hotPink.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 coral.addEventListener('click', () => {
-    color = coral.value;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = coral.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = coral.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
 });
 
 anyColor.addEventListener('input', () => {//for the color picker
-    color = anyColor.value;
-    foreground.style.backgroundColor = color;
+    if(bgColorFlag == false){//if in pen mode change pen color
+        color = anyColor.value;
+        foreground.style.backgroundColor = color;
+    }
+    else{//if in bgColor mode change bgColor
+        bgColor = anyColor.value;
+        bgswatch.style.backgroundColor = bgColor;
+        changeBackgroundColor();
+    }
+    
 });
 
+//switch to choosing background color
+let bgColorFlag = false;
 let bgColor = document.getElementById('background-color');
+bgColor.addEventListener('click', () => {
+    if(bgColorFlag == false){
+        bgColorFlag = true;
+        console.log(bgColorFlag);
+    }
+    else{
+        bgColorFlag = false;
+        console.log(bgColorFlag);
+    }
+});
+
+function changeBackgroundColor(){
+    let rows = document.getElementsByClassName('row');
+    for(let i = 0; i < rows.length; i++) {    //changes bgColor of background
+        if(rows[i].id == "0"){
+            rows[i].style.backgroundColor = bgColor;
+        }
+    }
+}
+        
