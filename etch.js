@@ -1,7 +1,5 @@
 let slider = document.getElementById('mySlider');
 let sliderValue = document.getElementById('showSliderValue');
-let backgroundcolor = "black";//default color
-foreground.style.backgroundColor = backgroundcolor;//swatch color
 //Print initial grid
 let rows = slider.value;
 let columns = slider.value;
@@ -16,7 +14,7 @@ for (let i = 0; i < columns; i++)
             let row = document.createElement('div');
             row.className = 'row';
             row.id = '0';//to differentiate between background color and colored divs
-            row.style.backgroundColor = backgroundcolor;
+            row.style.backgroundColor = "white";
             row.style.borderWidth = "1px";
             column.appendChild(row);
         }
@@ -42,7 +40,7 @@ slider.addEventListener("input", () => {
                 row.className= 'row';
                 row.id = '0';//to differentiate between background color and colored divs
                 row.style.borderWidth = "1px";//add a grid when user resizes grid
-                row.style.backgroundColor = backgroundcolor;
+                row.style.backgroundColor = bgColor;
                 column.appendChild(row);
             }
             grid.appendChild(column);
@@ -147,9 +145,9 @@ let bgswatch = document.getElementById('background')
 let anyColor = document.getElementById('anyColor');
 
 
-let color = "white";//default pen color
-foreground.style.backgroundColor = color;//swatch color
-
+let color = "black";//default pen color
+foreground.style.backgroundColor = color;// foreground swatch color
+bgswatch.style.backgroundColor = "white";//initial background swatch color
 black.addEventListener('click', () => {
     if(bgColorFlag == false){//if in pen mode change pen color
         color = black.value;
@@ -475,6 +473,7 @@ anyColor.addEventListener('input', () => {//for the color picker
 //switch to choosing background color
 let bgColorFlag = false;
 let bgColor = document.getElementById('background-color');
+
 bgColor.addEventListener('click', () => {
     if(bgColorFlag == false){
         bgColorFlag = true;
@@ -483,6 +482,7 @@ bgColor.addEventListener('click', () => {
         bgColorFlag = false;
     }
 });
+bgColor = white.value;//default background color
 
 function changeBackgroundColor(){
     let rows = document.getElementsByClassName('row');
