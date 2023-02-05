@@ -254,20 +254,49 @@ eraser.addEventListener('click', () => {//toggle eraser on/off
 });
 
 //saving colors
-//saves the color of the color picker for later use
-let customColor1 = document.getElementById('custom-color-1');
-customColor1.addEventListener('click', () => {
-    if(checkIfCustomColorHasChanged == true){//if default color wasnt changed then dont change.
-        customColor1.style.backgroundImage = "none";
-        customColor1.style.backgroundColor = anyColor.value;
-        if(bgColorFlag == false){//if in pen mode change pen color
-            color = anyColor.value;
-            foreground.style.backgroundColor = color;
+/*when the custom button is double clicked it takes the value of the color palette and saves it for later use
+when the custom button is clicked once after a color has been set to it the pen will take the saved color
+setting a different color is done by changing the value in the palette and double clicking the custom color box.*/
+
+function handleClickAndDoubleClick(element, anyColor) {
+    element.addEventListener('dblclick', () => {
+        if (checkIfCustomColorHasChanged == true) {
+            element.style.backgroundImage = "none";//remove placeholder
+            element.style.backgroundColor = anyColor.value;//set bgcolor to color of input="color"
+            element.value = anyColor.value;//save color for later use in single click
+            if (bgColorFlag == false) {//change pen color
+                color = anyColor.value;
+                foreground.style.backgroundColor = color;
+            } else {
+                bgColor = anyColor.value;//change background color
+                bgswatch.style.backgroundColor = bgColor;
+                changeBackgroundColor();
+            }
         }
-        else{//if in bgColor mode change bgColor
-            bgColor = anyColor.value;
+    });
+    element.addEventListener('click', () => {
+        if (bgColorFlag == false) {//change pen color
+            color = element.value;
+            foreground.style.backgroundColor = color;
+        } else {
+            bgColor = element.value;//change background color
             bgswatch.style.backgroundColor = bgColor;
             changeBackgroundColor();
         }
-    }
-});
+    });
+}
+
+let customColor1 = document.getElementById('custom-color-1');
+handleClickAndDoubleClick(customColor1, anyColor);
+
+let customColor2 = document.getElementById('custom-color-2');
+handleClickAndDoubleClick(customColor2, anyColor);
+
+let customColor3 = document.getElementById('custom-color-3');
+handleClickAndDoubleClick(customColor3, anyColor);
+
+let customColor4 = document.getElementById('custom-color-4');
+handleClickAndDoubleClick(customColor4, anyColor);
+
+let customColor5 = document.getElementById('custom-color-5');
+handleClickAndDoubleClick(customColor5, anyColor);
