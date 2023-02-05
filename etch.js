@@ -202,7 +202,6 @@ lightPurple.addEventListener('click', () => changeColor(lightPurple));
 hotPink.addEventListener('click', () => changeColor(hotPink));
 coral.addEventListener('click', () => changeColor(coral));
 
-let checkIfCustomColorHasChanged = false;//ran out of names
 
 anyColor.addEventListener('input', () => {//for the color picker
     checkIfCustomColorHasChanged = true;
@@ -257,6 +256,8 @@ eraser.addEventListener('click', () => {//toggle eraser on/off
 /*when the custom button is double clicked it takes the value of the color palette and saves it for later use
 when the custom button is clicked once after a color has been set to it the pen will take the saved color
 setting a different color is done by changing the value in the palette and double clicking the custom color box.*/
+let checkIfCustomColorHasChanged = false;//ran out of names, doesnt let custom color to change if user never clicked color picker
+
 
 function handleClickAndDoubleClick(element, anyColor) {
     element.addEventListener('dblclick', () => {
@@ -275,14 +276,19 @@ function handleClickAndDoubleClick(element, anyColor) {
         }
     });
     element.addEventListener('click', () => {
-        if (bgColorFlag == false) {//change pen color
-            color = element.value;
-            foreground.style.backgroundColor = color;
-        } else {
-            bgColor = element.value;//change background color
-            bgswatch.style.backgroundColor = bgColor;
-            changeBackgroundColor();
+        if(element.style.backgroundImage !== ""){
+        if (checkIfCustomColorHasChanged == true) {
+            if (bgColorFlag == false) {//change pen color
+                color = element.value;
+                foreground.style.backgroundColor = color;
+            } 
+            else {
+                bgColor = element.value;//change background color
+                bgswatch.style.backgroundColor = bgColor;
+                changeBackgroundColor();
+            }
         }
+    }
     });
 }
 
