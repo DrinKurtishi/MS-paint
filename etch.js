@@ -82,7 +82,7 @@ function draw(){
         pixels[i].addEventListener('mousedown', (e) => {
             e.preventDefault()//prevents drag and drop which stopped the drawing
             colorFlag = true;
-            if(eraserFlag == true){
+            if(eraserFlag == true){//if eraser button is clicked
                 pixels[i].style.backgroundColor = bgColor;//set color of pen to background color(mimicing eraser)
                 pixels[i].id = '0';//change the state of the pixel to 'uncolored' so a background color change targets it as well
             }
@@ -98,7 +98,7 @@ function draw(){
 
         pixels[i].addEventListener('mouseover', () => {
             if (colorFlag) {
-                if(eraserFlag == true){
+                if(eraserFlag == true){//if eraser button is clicked
                     pixels[i].style.backgroundColor = bgColor;//set color of pen to background color(mimicing eraser)
                     pixels[i].id = '0';//change the state of the pixel to 'uncolored' so a background color change targets it as well
                 }
@@ -239,9 +239,9 @@ function changeBackgroundColor(){
 }
 
 //eraser
-let eraserFlag = false;
+let eraserFlag = false;//initial eraser off state
 let eraser = document.getElementById('eraser-button');
-eraser.addEventListener('click', () => {
+eraser.addEventListener('click', () => {//toggle eraser on/off
     if(eraserFlag == false){
         eraserFlag = true;
     }
