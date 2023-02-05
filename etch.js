@@ -160,314 +160,47 @@ let anyColor = document.getElementById('anyColor');
 let color = "black";//default pen color
 foreground.style.backgroundColor = color;// foreground swatch color
 bgswatch.style.backgroundColor = "white";//initial background swatch color
-black.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = black.value;
+
+function changeColor(button) {
+    if (bgColorFlag === false) {
+        color = button.value;
         foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = black.value;
+    } else {
+        bgColor = button.value;
         bgswatch.style.backgroundColor = bgColor;
         changeBackgroundColor();
     }
-});
-darkGray.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = darkGray.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = darkGray.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-maroon.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = maroon.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = maroon.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-olive.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = olive.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = olive.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-green.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = green.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = green.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-teal.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = teal.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = teal.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-navy.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = navy.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = navy.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-purple.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = purple.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = purple.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-olive2.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = olive2.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = olive2.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-navy2.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = navy2.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = navy2.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-lightBlue.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = lightBlue.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = lightBlue.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-navy3.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = navy3.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = navy3.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-navy4.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = navy4.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = navy4.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-brown.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = brown.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = brown.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-white.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = white.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = white.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-lightGray.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = lightGray.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = lightGray.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-red.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = red.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = red.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-yellow.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = yellow.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = yellow.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-lime.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = lime.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = lime.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-blue.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = blue.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = blue.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-pink.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = pink.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = pink.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-lighterBlue.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = lighterBlue.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = lighterBlue.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-lightYellow.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = lightYellow.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = lightYellow.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-lightGreen.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = lightGreen.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = lightGreen.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-aqua.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = aqua.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = aqua.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-lightPurple.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = lightPurple.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = lightPurple.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-hotPink.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = hotPink.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = hotPink.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
-coral.addEventListener('click', () => {
-    if(bgColorFlag == false){//if in pen mode change pen color
-        color = coral.value;
-        foreground.style.backgroundColor = color;
-    }
-    else{//if in bgColor mode change bgColor
-        bgColor = coral.value;
-        bgswatch.style.backgroundColor = bgColor;
-        changeBackgroundColor();
-    }
-});
+}
+
+black.addEventListener('click', () => changeColor(black));
+darkGray.addEventListener('click', () => changeColor(darkGray));
+maroon.addEventListener('click', () => changeColor(maroon));
+olive.addEventListener('click', () => changeColor(olive));
+green.addEventListener('click', () => changeColor(green));
+teal.addEventListener('click', () => changeColor(teal));
+navy.addEventListener('click', () => changeColor(navy));
+purple.addEventListener('click', () => changeColor(purple));
+olive2.addEventListener('click', () => changeColor(olive2));
+navy2.addEventListener('click', () => changeColor(navy2));
+lightBlue.addEventListener('click', () => changeColor(lightBlue));
+navy3.addEventListener('click', () => changeColor(navy3));
+navy4.addEventListener('click', () => changeColor(navy4));
+brown.addEventListener('click', () => changeColor(brown));
+white.addEventListener('click', () => changeColor(white));
+lightGray.addEventListener('click', () => changeColor(lightGray));
+red.addEventListener('click', () => changeColor(red));
+yellow.addEventListener('click', () => changeColor(yellow));
+lime.addEventListener('click', () => changeColor(lime));
+blue.addEventListener('click', () => changeColor(blue));
+pink.addEventListener('click', () => changeColor(pink));
+lighterBlue.addEventListener('click', () => changeColor(lighterBlue));
+lightYellow.addEventListener('click', () => changeColor(lightYellow));
+lightGreen.addEventListener('click', () => changeColor(lightGreen));
+aqua.addEventListener('click', () => changeColor(aqua));
+lightPurple.addEventListener('click', () => changeColor(lightPurple));
+hotPink.addEventListener('click', () => changeColor(hotPink));
+coral.addEventListener('click', () => changeColor(coral));
+
 
 anyColor.addEventListener('input', () => {//for the color picker
     if(bgColorFlag == false){//if in pen mode change pen color
@@ -515,6 +248,4 @@ eraser.addEventListener('click', () => {
     else{
         eraserFlag = false;
     }
-    eraser.value = bgColor;
 });
-        
