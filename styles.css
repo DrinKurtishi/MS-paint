@@ -139,7 +139,7 @@ body{
     padding: 5px;
 }
 
-input[type="color"] {
+#anyColor {
     background-image: url(images/colorpalette.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -175,6 +175,9 @@ input[type="color"]::-webkit-color-swatch{
     top: -20px;
     right: -25px;
     display: inline-block;
+  }
+  #custom-color-1{
+    background-color: white;
   }
   
  

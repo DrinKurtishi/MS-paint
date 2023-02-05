@@ -155,6 +155,7 @@ let coral = document.getElementById('coral');
 let swatch = document.getElementById('foreground');
 let bgswatch = document.getElementById('background');
 let anyColor = document.getElementById('anyColor');
+anyColor.value = "#FFFFFF";
 
 
 let color = "black";//default pen color
@@ -201,8 +202,10 @@ lightPurple.addEventListener('click', () => changeColor(lightPurple));
 hotPink.addEventListener('click', () => changeColor(hotPink));
 coral.addEventListener('click', () => changeColor(coral));
 
+let checkIfCustomColorHasChanged = false;//ran out of names
 
 anyColor.addEventListener('input', () => {//for the color picker
+    checkIfCustomColorHasChanged = true;
     if(bgColorFlag == false){//if in pen mode change pen color
         color = anyColor.value;
         foreground.style.backgroundColor = color;
@@ -247,5 +250,23 @@ eraser.addEventListener('click', () => {//toggle eraser on/off
     }
     else{
         eraserFlag = false;
+    }
+});
+
+//saving colors
+//saves the color of the color picker for later use
+let customColor1 = document.getElementById('custom-color-1');
+customColor1.addEventListener('click', () => {
+    customColor1.style.backgroundColor = anyColor.value;
+    if(checkIfCustomColorHasChanged == true){//if default color wasnt changed then dont change.
+        if(bgColorFlag == false){//if in pen mode change pen color
+            color = anyColor.value;
+            foreground.style.backgroundColor = color;
+        }
+        else{//if in bgColor mode change bgColor
+            bgColor = anyColor.value;
+            bgswatch.style.backgroundColor = bgColor;
+            changeBackgroundColor();
+        }
     }
 });
