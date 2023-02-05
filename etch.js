@@ -257,8 +257,9 @@ eraser.addEventListener('click', () => {//toggle eraser on/off
 //saves the color of the color picker for later use
 let customColor1 = document.getElementById('custom-color-1');
 customColor1.addEventListener('click', () => {
-    customColor1.style.backgroundColor = anyColor.value;
     if(checkIfCustomColorHasChanged == true){//if default color wasnt changed then dont change.
+        customColor1.style.backgroundImage = "none";
+        customColor1.style.backgroundColor = anyColor.value;
         if(bgColorFlag == false){//if in pen mode change pen color
             color = anyColor.value;
             foreground.style.backgroundColor = color;
