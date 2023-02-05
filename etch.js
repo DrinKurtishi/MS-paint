@@ -82,9 +82,15 @@ function draw(){
         pixels[i].addEventListener('mousedown', (e) => {
             e.preventDefault()//prevents drag and drop which stopped the drawing
             colorFlag = true;
-            pixels[i].style.backgroundColor = color;
-            pixels[i].id = '1';//differentiate between a colored div and background color
-            swatch.style.backgroundColor = color;
+            if(eraserFlag == true){
+                pixels[i].style.backgroundColor = bgColor;//set color of pen to background color(mimicing eraser)
+                pixels[i].id = '0';//change the state of the pixel to 'uncolored' so a background color change targets it as well
+            }
+            else{
+                pixels[i].style.backgroundColor = color;
+                pixels[i].id = '1';//differentiate between a colored div and background color
+                swatch.style.backgroundColor = color;
+            }
         });
         pixels[i].addEventListener('mouseup', () => {
             colorFlag = false;
@@ -92,8 +98,14 @@ function draw(){
 
         pixels[i].addEventListener('mouseover', () => {
             if (colorFlag) {
-                pixels[i].style.backgroundColor = color;
-                pixels[i].id = '1';//differentiate between a colored div and background color
+                if(eraserFlag == true){
+                    pixels[i].style.backgroundColor = bgColor;//set color of pen to background color(mimicing eraser)
+                    pixels[i].id = '0';//change the state of the pixel to 'uncolored' so a background color change targets it as well
+                }
+                else{
+                    pixels[i].style.backgroundColor = color;
+                    pixels[i].id = '1';//differentiate between a colored div and background color
+                }
             }
         });
     }
@@ -492,4 +504,17 @@ function changeBackgroundColor(){
         }
     }
 }
+
+//eraser
+let eraserFlag = false;
+let eraser = document.getElementById('eraser-button');
+eraser.addEventListener('click', () => {
+    if(eraserFlag == false){
+        eraserFlag = true;
+    }
+    else{
+        eraserFlag = false;
+    }
+    eraser.value = bgColor;
+});
         
