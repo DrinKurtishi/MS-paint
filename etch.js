@@ -258,7 +258,6 @@ when the custom button is clicked once after a color has been set to it the pen 
 setting a different color is done by changing the value in the palette and double clicking the custom color box.*/
 let checkIfCustomColorHasChanged = false;//ran out of names, doesnt let custom color to change if user never clicked color picker
 
-
 function handleClickAndDoubleClick(element, anyColor) {
     element.addEventListener('dblclick', () => {
         if (checkIfCustomColorHasChanged == true) {
@@ -276,19 +275,19 @@ function handleClickAndDoubleClick(element, anyColor) {
         }
     });
     element.addEventListener('click', () => {
-        if(element.style.backgroundImage !== ""){
-        if (checkIfCustomColorHasChanged == true) {
-            if (bgColorFlag == false) {//change pen color
-                color = element.value;
-                foreground.style.backgroundColor = color;
-            } 
-            else {
-                bgColor = element.value;//change background color
-                bgswatch.style.backgroundColor = bgColor;
-                changeBackgroundColor();
+        if(element.style.backgroundImage !== ""){//if custom button doesnt have a set color dont do anything
+            if (checkIfCustomColorHasChanged == true) {
+                if (bgColorFlag == false) {//change pen color
+                    color = element.value;
+                    foreground.style.backgroundColor = color;
+                } 
+                else {
+                    bgColor = element.value;//change background color
+                    bgswatch.style.backgroundColor = bgColor;
+                    changeBackgroundColor();
+                }
             }
         }
-    }
     });
 }
 
@@ -306,3 +305,40 @@ handleClickAndDoubleClick(customColor4, anyColor);
 
 let customColor5 = document.getElementById('custom-color-5');
 handleClickAndDoubleClick(customColor5, anyColor);
+
+let customColor6 = document.getElementById('custom-color-6');
+handleClickAndDoubleClick(customColor6, anyColor);
+
+let customColor7 = document.getElementById('custom-color-7');
+handleClickAndDoubleClick(customColor7, anyColor);
+
+let customColor8 = document.getElementById('custom-color-8');
+handleClickAndDoubleClick(customColor8, anyColor);
+
+let customColor9 = document.getElementById('custom-color-9');
+handleClickAndDoubleClick(customColor9, anyColor);
+
+let customColor10 = document.getElementById('custom-color-10');
+handleClickAndDoubleClick(customColor10, anyColor);
+
+let customColor11 = document.getElementById('custom-color-11');
+handleClickAndDoubleClick(customColor11, anyColor);
+
+let customColor12 = document.getElementById('custom-color-12');
+handleClickAndDoubleClick(customColor12, anyColor);
+
+let customColor13 = document.getElementById('custom-color-13');
+handleClickAndDoubleClick(customColor13, anyColor);
+
+//clear canvas
+let clearCanvas = document.getElementById('clear-canvas-button');
+function clearCanvass(){
+    let rows = document.getElementsByClassName('row');
+    for(let i = 0; i < rows.length; i++) {   //cycles through all pixels
+        if(rows[i].id == "1"){
+            rows[i].id = "0";//change all pixels to "uncolored state"
+        }
+        rows[i].style.backgroundColor = bgColor;
+    }
+}
+clearCanvas.addEventListener('click', () => clearCanvass());
