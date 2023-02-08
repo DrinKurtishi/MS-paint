@@ -346,9 +346,9 @@ clearCanvas.addEventListener('click', () => clearCanvass());
 //cursors
 grid.addEventListener('mouseenter', () => {
     if(eraserFlag == true){
-        grid.style.cursor = "url(images/eraser-cursor.png) 16 16, auto";
+        grid.style.cursor = "url(images/eraser-cursor.png) 10 14, auto";
     }
     else{
-        grid.style.cursor = "url(images/pencil-cursor.png) 16 16, auto";
+        grid.style.cursor = "url(images/pencil-cursor.png) 13 24, auto";
     }
 })
