@@ -275,7 +275,7 @@ function handleClickAndDoubleClick(element, anyColor) {
         }
     });
     element.addEventListener('click', () => {
-        if(element.style.backgroundImage !== ""){//if custom button doesnt have a set color dont do anything
+        if(element.style.backgroundImage !== ""){//if custom button doesnt have a previous set color dont do anything
             if (checkIfCustomColorHasChanged == true) {
                 if (bgColorFlag == false) {//change pen color
                     color = element.value;
@@ -342,3 +342,13 @@ function clearCanvass(){
     }
 }
 clearCanvas.addEventListener('click', () => clearCanvass());
+
+//cursors
+grid.addEventListener('mouseenter', () => {
+    if(eraserFlag == true){
+        grid.style.cursor = "url(images/eraser-cursor.png) 16 16, auto";
+    }
+    else{
+        grid.style.cursor = "url(images/pencil-cursor.png) 16 16, auto";
+    }
+})

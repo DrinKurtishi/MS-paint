@@ -187,6 +187,13 @@ input[type="color"]::-webkit-color-swatch{
     background-size: cover;
     background-repeat: no-repeat;
 }
+#clear-canvas-button, #eraser-button,
+#pencil-button{
+    color: transparent;
+    background-color: grey;
+    border-color: transparent;
+}
+
   
  
 
