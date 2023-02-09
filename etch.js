@@ -63,25 +63,27 @@ GridButton.addEventListener('click', () => {
     flag = true;//prevents grid from unshwoing if button is pressed
     let rows = document.getElementsByClassName('row');
     if(rows[1].style.borderWidth == "0px"){
-        GridButton.innerHTML = "";
-        let img = document.createElement("img");
-        img.src = "images/CloseGrid.png";
-        img.width = "50";
-        GridButton.appendChild(img);
         for(let i = 0; i < rows.length; i++) {    
             rows[i].style.borderWidth = "1px";
         }
-    }
-    else{
+        //changes grid icon
         GridButton.innerHTML = "";
         let img = document.createElement("img");
-        img.src = "images/OpenGrid.png";
-        img.width = "50";
+        img.src = "images/CloseGrid.png";
+        //img.width = "50";
         GridButton.appendChild(img);
+    }
+    else{
         flag = false;//allow borders to unshow if user chooses clear borders
         for(let i = 0; i < rows.length; i++) {    
             rows[i].style.borderWidth = "0px";
         }
+        //changes grid icon
+        GridButton.innerHTML = "";
+        let img = document.createElement("img");
+        img.src = "images/OpenGrid.png";
+        //img.width = "50";
+        GridButton.appendChild(img);
     }
 });
 let colorFlag = false;
