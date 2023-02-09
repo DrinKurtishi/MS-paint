@@ -148,9 +148,9 @@ input[type="color"]::-webkit-color-swatch{
     visibility: hidden;
 }
 .color-swatches{
-    width: 70px;
-    height: 70px;
-    border: solid;
+    width: 77px;
+    height: 77px;
+    border: none;
     background-color: grey;
     padding: 5px;
 }
@@ -162,8 +162,8 @@ input[type="color"]::-webkit-color-swatch{
 }
 .fg-container {
     position: relative;
-    right: -5px;
-    bottom: -5px;
+    right: -10px;
+    bottom: -10px;
     display: inline-block;
   }
 #foreground{
@@ -172,8 +172,8 @@ input[type="color"]::-webkit-color-swatch{
 } 
 .bg-container {
     position: relative;
-    top: -20px;
-    right: -25px;
+    top: -15px;
+    right: -30px;
     display: inline-block;
   }
   #custom-color-1, #custom-color-2,
@@ -199,6 +199,17 @@ input[type="color"]::-webkit-color-swatch{
     border-color: purple;
 }
 
+.container{
+    background-color: rgb(172, 172, 172);
+    padding: 15px;
+}
+.colors{
+    display: flex;
+    align-items: center;
+}
+.tools-grid-container{
+    display: flex;
+}
   
  
 
