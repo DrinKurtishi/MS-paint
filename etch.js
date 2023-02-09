@@ -255,14 +255,24 @@ function changeBackgroundColor(){
 //eraser
 let eraserFlag = false;//initial eraser off state
 let eraser = document.getElementById('eraser-button');
-eraser.addEventListener('click', () => {//toggle eraser on/off
+eraser.addEventListener('click', () => {//toggle eraser on
+    bgColorFlag = false;//disable other tools
+    pencilFlag = false;
     if(eraserFlag == false){
         eraserFlag = true;
     }
-    else{
-        eraserFlag = false;
-    }
 });
+
+//pencil button
+let pencilFlag = true //pencil is initially in activated mode
+let pencilButton = document.getElementById('pencil-button');
+pencilButton.addEventListener('click', () => {
+    eraserFlag = false;//disable other tools
+    bgColorFlag = false;
+    if(pencilFlag == false){
+        pencilFlag = true;
+    }
+})
 
 //saving colors
 /*when the custom button is double clicked it takes the value of the color palette and saves it for later use
@@ -364,3 +374,4 @@ grid.addEventListener('mouseenter', () => {
         grid.style.cursor = "url(images/pencil-cursor.png) 13 24, auto";
     }
 })
+
