@@ -256,8 +256,7 @@ function changeBackgroundColor(){
 let eraserFlag = false;//initial eraser off state
 let eraser = document.getElementById('eraser-button');
 eraser.addEventListener('click', () => {//toggle eraser on
-    bgColorFlag = false;//disable other tools
-    pencilFlag = false;
+    pencilFlag = false;//disable pencil
     if(eraserFlag == false){
         eraserFlag = true;
     }
@@ -267,8 +266,7 @@ eraser.addEventListener('click', () => {//toggle eraser on
 let pencilFlag = true //pencil is initially in activated mode
 let pencilButton = document.getElementById('pencil-button');
 pencilButton.addEventListener('click', () => {
-    eraserFlag = false;//disable other tools
-    bgColorFlag = false;
+    eraserFlag = false;//disable eraser
     if(pencilFlag == false){
         pencilFlag = true;
     }

@@ -3,10 +3,15 @@ html, body{
     height: 100%;
 }
 body{
-    background-color: #121212;
+    background-color: #ededed;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.body{
+    border: solid;
+    border-color: #245DDA;
+    border-width: 4px;
 }
 
 #grid{
@@ -218,4 +223,31 @@ input[type="color"]::-webkit-color-swatch{
 }
 .right{
     display: flex;
+}
+.bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #245DDA;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#minimize, #windowed,
+#close{
+    color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    background-color: transparent;
+    width: 24px;
+    padding: 0;
+}
+.bar-right{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#title{
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: bold;
 }
