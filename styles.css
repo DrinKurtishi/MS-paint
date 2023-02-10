@@ -5,6 +5,8 @@ html, body{
 body{
     background-color: #ededed;
     background-image: url(images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
