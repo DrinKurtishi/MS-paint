@@ -40,7 +40,7 @@ slider.addEventListener("input", () => {
                 row.className= 'row';
                 row.id = '0';//to differentiate between background color and colored divs
                 row.style.borderWidth = "1px";//add a grid when user resizes grid
-                row.style.backgroundColor = bgColor;
+                row.style.backgroundColor = bgColor.value;
                 column.appendChild(row);
             }
             grid.appendChild(column);
@@ -95,7 +95,7 @@ function draw(){
             e.preventDefault()//prevents drag and drop which stopped the drawing
             colorFlag = true;
             if(eraserFlag == true){//if eraser button is clicked
-                pixels[i].style.backgroundColor = bgColor;//set color of pen to background color(mimicing eraser)
+                pixels[i].style.backgroundColor = bgColor.value;//set color of pen to background color(mimicing eraser)
                 pixels[i].id = '0';//change the state of the pixel to 'uncolored' so a background color change targets it as well
             }
             else{
@@ -111,7 +111,7 @@ function draw(){
         pixels[i].addEventListener('mouseover', () => {
             if (colorFlag) {
                 if(eraserFlag == true){//if eraser button is clicked
-                    pixels[i].style.backgroundColor = bgColor;//set color of pen to background color(mimicing eraser)
+                    pixels[i].style.backgroundColor = bgColor.value;//set color of pen to background color(mimicing eraser)
                     pixels[i].id = '0';//change the state of the pixel to 'uncolored' so a background color change targets it as well
                 }
                 else{
@@ -179,8 +179,8 @@ function changeColor(button) {
         color = button.value;
         foreground.style.backgroundColor = color;
     } else {
-        bgColor = button.value;
-        bgswatch.style.backgroundColor = bgColor;
+        bgColor.value = button.value;
+        bgswatch.style.backgroundColor = bgColor.value;
         changeBackgroundColor();
     }
 }
@@ -222,7 +222,7 @@ anyColor.addEventListener('input', () => {//for the color picker
         foreground.style.backgroundColor = color;
     }
     else{//if in bgColor mode change bgColor
-        bgColor = anyColor.value;
+        bgColor.value = anyColor.value;
         bgswatch.style.backgroundColor = bgColor;
         changeBackgroundColor();
     }
@@ -236,18 +236,19 @@ let bgColor = document.getElementById('background-color');
 bgColor.addEventListener('click', () => {
     if(bgColorFlag == false){
         bgColorFlag = true;
+        bgColor.style.border = "inset";
     }
     else{
         bgColorFlag = false;
+        bgColor.style.border = "outset";
     }
 });
-bgColor = white.value;//default background color
 
 function changeBackgroundColor(){
     let rows = document.getElementsByClassName('row');
     for(let i = 0; i < rows.length; i++) {    //changes bgColor of background
         if(rows[i].id == "0"){//if div uncolored then color to bgColor
-            rows[i].style.backgroundColor = bgColor;
+            rows[i].style.backgroundColor = bgColor.value;
         }
     }
 }
@@ -260,16 +261,27 @@ eraser.addEventListener('click', () => {//toggle eraser on
     if(eraserFlag == false){
         eraserFlag = true;
     }
+    //to tell if a button is on, making it stay "pressed"
+    pencilButton.style.border = "outset";
+    pencilButton.style.cursor = "pointer";
+    eraser.style.border = "inset";
+    eraser.style.cursor = "auto";
 });
 
 //pencil button
 let pencilFlag = true //pencil is initially in activated mode
 let pencilButton = document.getElementById('pencil-button');
+pencilButton.style.cursor = "auto";
 pencilButton.addEventListener('click', () => {
     eraserFlag = false;//disable eraser
     if(pencilFlag == false){
         pencilFlag = true;
     }
+    //to tell if a button is on, making it stay "pressed"
+    pencilButton.style.border = "inset";
+    eraser.style.border = "outset";
+    pencilButton.style.cursor = "auto";
+    eraser.style.cursor = "pointer";
 })
 
 //saving colors
@@ -289,7 +301,7 @@ function handleClickAndDoubleClick(element, anyColor) {
                 foreground.style.backgroundColor = color;
             } else {
                 bgColor = anyColor.value;//change background color
-                bgswatch.style.backgroundColor = bgColor;
+                bgswatch.style.backgroundColor = bgColor.value;
                 changeBackgroundColor();
             }
         }
@@ -303,7 +315,7 @@ function handleClickAndDoubleClick(element, anyColor) {
                 } 
                 else {
                     bgColor = element.value;//change background color
-                    bgswatch.style.backgroundColor = bgColor;
+                    bgswatch.style.backgroundColor = bgColor.value;
                     changeBackgroundColor();
                 }
             }
@@ -358,7 +370,7 @@ function clearCanvass(){
         if(rows[i].id == "1"){
             rows[i].id = "0";//change all pixels to "uncolored state"
         }
-        rows[i].style.backgroundColor = bgColor;
+        rows[i].style.backgroundColor = bgColor.value;
     }
 }
 clearCanvas.addEventListener('click', () => clearCanvass());

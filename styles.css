@@ -4,20 +4,27 @@ html, body{
 }
 body{
     background-color: #ededed;
+    background-image: url(images/background.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: sans-serif;
 }
-.body{
+.bar-body-container{
     border: solid;
     border-color: #245DDA;
     border-width: 4px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    overflow: hidden;
 }
 
 #grid{
     display: flex;
     width: 600px;
     height: 600px;
+    border: inset;
+    border-width: 7px;
 }
 .column{
     display: flex;
@@ -41,7 +48,7 @@ body{
 #title{
     font-size: 15px;
 }
-#showSliderValue, .header{
+.header{
     color: whitesmoke;
 }
 #black{
@@ -133,7 +140,7 @@ body{
     width: 25px;
     height: 25px;
     border: inset;
-    border-color: rgb(200, 200, 200);
+    border-color: rgb(209, 209, 209);
     cursor: pointer;
 }
 .colorbuttons:active{
@@ -145,7 +152,7 @@ body{
     flex-wrap: wrap;
     width: 363px;
     gap: 1px;
-    background-color: rgb(172, 172, 172);
+    background-color: rgb(209, 209, 209);
     padding: 5px;
 }
 
@@ -200,7 +207,7 @@ input[type="color"]::-webkit-color-swatch{
 #pencil-button, #background-color,
 #GridButton{
     color: transparent;
-    background-color: rgb(172, 172, 172);
+    background-color: rgb(209, 209, 209);
     border-color: transparent;
     cursor: pointer;
     border: solid;
@@ -209,8 +216,9 @@ input[type="color"]::-webkit-color-swatch{
 }
 
 .container{
-    background-color: rgb(172, 172, 172);
+    background-color: rgb(209, 209, 209);
     padding: 15px;
+    padding-left: 5px;
 }
 .colors{
     display: flex;
@@ -220,6 +228,7 @@ input[type="color"]::-webkit-color-swatch{
 }
 .tools-grid-container{
     display: flex;
+    gap: 4px;
 }
 .right{
     display: flex;
@@ -231,15 +240,25 @@ input[type="color"]::-webkit-color-swatch{
     background-color: #245DDA;
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
-#minimize, #windowed,
-#close{
+.control-buttons{
+    filter: brightness(100%);
+    transition: 0.1s;
     color: transparent;
     border-color: transparent;
     cursor: pointer;
     background-color: transparent;
     width: 24px;
     padding: 0;
+}
+.control-buttons:hover{
+    filter:brightness(110%);
+    transition: 0.1s;
+}
+.control-buttons:active{
+    filter: brightness(80%);
 }
 .bar-right{
     display: flex;
@@ -248,6 +267,51 @@ input[type="color"]::-webkit-color-swatch{
 }
 #title{
     color: whitesmoke;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
+    margin: 0;
+    text-shadow: 1px 2px 2px rgb(0, 0, 0);
+}
+.slider-container{
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#showSliderValue{
+    color: black;
+}
+input[type="range"] {
+    background: transparent;
+    appearance: none;
+}
+input[type="range"]:focus{
+    outline: none;
+}
+input[type="range"]:hover{
+    cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+    background-color: rgb(169, 169, 169);
+    height: 6px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -3px;
+    background-color: #245DDA;
+    width: 13px;
+    height: 13px;
+}
+#GridButton, #background-color,
+#eraser-button, #clear-canvas-button{
+    border: outset;
+}
+#pencil-button{
+    border: inset;
+}
+#GridButton:active, 
+#clear-canvas-button:active{
+    border: inset;
 }

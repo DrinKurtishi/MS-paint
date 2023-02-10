@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
     <link rel="stylesheet" href="styles.css">
     <script src="etch.js" async></script>
     <title>Etch a sketch</title>
@@ -12,13 +13,13 @@
     <div class="bar-body-container">
     <div class="bar">
         <div class="bar-right">
-            <img src="images/paint-logo.png" width="40px">
+            <img src="images/paint-logo.png" width="35px">
             <p id="title">untitled - Paint</p>
         </div>
         <div class="bar-left">
-            <button id="minimize"><img src="images/minimize.png" width="25px"></button>
-            <button id="windowed"><img src="images/windowed.png" width="25px"></button>
-            <button id="close"><img src="images/close.png" width="25px"></button>
+            <button class="control-buttons" id="minimize"><img src="images/minimize.png" width="25px"></button>
+            <button class="control-buttons" id="windowed"><img src="images/windowed.png" width="25px"></button>
+            <button class="control-buttons" id="close"><img src="images/close.png" width="25px"></button>
         </div>
     </div>
     <div class="body">
@@ -30,7 +31,7 @@
                             <button id="GridButton"><img src="images/CloseGrid.png"></button>
                         </div>
                         <div class="background-color">
-                            <button id="background-color"><img src="images/BgColor.png"></button>
+                            <button id="background-color" value="white"><img src="images/BgColor.png"></button>
                         </div>
                         <div class="pencil">
                             <button id="pencil-button"><img src="images/pencil.png"></button>
