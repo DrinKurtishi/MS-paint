@@ -223,7 +223,7 @@ anyColor.addEventListener('input', () => {//for the color picker
     }
     else{//if in bgColor mode change bgColor
         bgColor.value = anyColor.value;
-        bgswatch.style.backgroundColor = bgColor;
+        bgswatch.style.backgroundColor = bgColor.value;
         changeBackgroundColor();
     }
     
@@ -300,7 +300,7 @@ function handleClickAndDoubleClick(element, anyColor) {
                 color = anyColor.value;
                 foreground.style.backgroundColor = color;
             } else {
-                bgColor = anyColor.value;//change background color
+                bgColor.value = anyColor.value;//change background color
                 bgswatch.style.backgroundColor = bgColor.value;
                 changeBackgroundColor();
             }
@@ -314,7 +314,7 @@ function handleClickAndDoubleClick(element, anyColor) {
                     foreground.style.backgroundColor = color;
                 } 
                 else {
-                    bgColor = element.value;//change background color
+                    bgColor.value = element.value;//change background color
                     bgswatch.style.backgroundColor = bgColor.value;
                     changeBackgroundColor();
                 }
