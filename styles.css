@@ -374,6 +374,7 @@ input[type="range"]::-webkit-slider-thumb {
 #about-p{
     border-top: solid;
     border-bottom: solid;
+    border-width: 1px;
     border-color: rgb(148, 148, 148);
 }
 #about-p, #odin-p, 
@@ -407,4 +408,14 @@ input[type="range"]::-webkit-slider-thumb {
 #grid-text, #color-text,
 #placeholder-text{
     margin: 0;;
+}
+#help-dropdown{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#second, #fourth{
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgb(148, 148, 148);
 }
