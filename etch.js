@@ -237,10 +237,12 @@ bgColor.addEventListener('click', () => {
     if(bgColorFlag == false){
         bgColorFlag = true;
         bgColor.style.border = "inset";
+        bgColor.style.backgroundColor = "#ededed"
     }
     else{
         bgColorFlag = false;
         bgColor.style.border = "outset";
+        bgColor.style.backgroundColor = "rgb(209, 209, 209)"
     }
 });
 
@@ -264,8 +266,10 @@ eraser.addEventListener('click', () => {//toggle eraser on
     //to tell if a button is on, making it stay "pressed"
     pencilButton.style.border = "outset";
     pencilButton.style.cursor = "pointer";
+    pencilButton.style.backgroundColor = "rgb(209, 209, 209)"
     eraser.style.border = "inset";
     eraser.style.cursor = "auto";
+    eraser.style.backgroundColor = "#ededed";
 });
 
 //pencil button
@@ -281,7 +285,9 @@ pencilButton.addEventListener('click', () => {
     pencilButton.style.border = "inset";
     eraser.style.border = "outset";
     pencilButton.style.cursor = "auto";
+    pencilButton.style.backgroundColor = "#ededed"
     eraser.style.cursor = "pointer";
+    eraser.style.backgroundColor = "rgb(209, 209, 209)"
 })
 
 //saving colors
@@ -385,3 +391,53 @@ grid.addEventListener('mouseenter', () => {
     }
 })
 
+//menu bar buttons
+let aboutButton = document.getElementById('about-button');
+let helpButton = document.getElementById('help-button');
+let aboutFlag = false;
+let helpFlag = false;
+
+aboutButton.addEventListener('mouseenter', () => {
+    if(aboutFlag === false){
+        aboutButton.style.border = "outset";
+        aboutButton.style.borderWidth = "2px";
+    }
+});
+aboutButton.addEventListener('mouseleave', () => {
+    if(aboutFlag === false){
+        aboutButton.style.border = "none";
+    }
+});
+
+aboutButton.addEventListener('click', () => {
+    aboutFlag = true;
+    aboutButton.style.border = "inset"
+    aboutButton.style.borderWidth = "2px";
+    if(helpFlag === true){
+        helpButton.style.border = "none";
+        helpFlag = false;
+    }
+   
+});
+
+helpButton.addEventListener('mouseenter', () => {
+    if(helpFlag === false){
+        helpButton.style.border = "outset";
+        helpButton.style.borderWidth = "2px";
+    }
+})
+helpButton.addEventListener('mouseleave', () => {
+    if(helpFlag === false){
+        helpButton.style.border = "none";
+    }
+})
+
+helpButton.addEventListener('click', () => {
+    helpFlag = true;
+    helpButton.style.border = "inset";
+    helpButton.style.borderWidth = "2px";
+    if(aboutFlag === true){
+        aboutButton.style.border = "none";
+        aboutFlag = false;
+    }
+});
