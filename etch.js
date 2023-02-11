@@ -397,6 +397,7 @@ let helpButton = document.getElementById('help-button');
 let aboutFlag = false;
 let helpFlag = false;
 let aboutDropDown = document.getElementById('about-dropdown');
+let helpDropDown = document.getElementById('help-dropdown');
 //all this code does is add hover effect and removes it on hover, click and stuff
 aboutButton.addEventListener('mouseenter', () => {
     if(aboutFlag === false){
@@ -419,6 +420,7 @@ aboutButton.addEventListener('click', () => {
         aboutButton.style.border = "inset";
         aboutButton.style.borderWidth = "2px";
         aboutDropDown.classList.toggle("show");
+        helpDropDown.classList.remove("show");
     }
     else{
         aboutFlag = false;
@@ -450,12 +452,14 @@ helpButton.addEventListener('click', () => {
         helpFlag = true;
         helpButton.style.border = "inset";
         helpButton.style.borderWidth = "2px";
+        helpDropDown.classList.toggle("show");
         aboutDropDown.classList.remove("show");
     }
     else{
         helpFlag = false;
         helpButton.style.border = "outset";
         helpButton.style.borderWidth = "2px";
+        helpDropDown.classList.remove("show");
     }
     if(aboutFlag === true){
         aboutButton.style.border = "none";
@@ -473,6 +477,8 @@ window.onclick = function(event) {
           openDropdown.classList.remove('show');
           aboutButton.style.border = "none";
           aboutFlag = false;
+          helpButton.style.border = "none";
+          helpFlag = false;
         }
       }
     }
