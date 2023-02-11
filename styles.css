@@ -224,19 +224,18 @@ input[type="color"]::-webkit-color-swatch{
 
 .container{
     background-color: rgb(195, 195, 195);
-    padding: 15px;
-    padding-left: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
 }
 .colors{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 5px;
 }
 .tools-grid-container{
     display: flex;
+    padding-right: 15px;
 }
 .right{
     display: flex;
@@ -339,7 +338,6 @@ input[type="range"]::-webkit-slider-thumb {
 .menu{
     display: flex;
     align-items: center;
-    min-height: 23px;
 }
 #about-button, #help-button{
     color: black;
@@ -358,6 +356,8 @@ input[type="range"]::-webkit-slider-thumb {
 #help-context{
     margin: 0;
     padding: 2px;
+    border-top: inset;
+    background-color: rgb(200, 200, 200);
 }
 .Help{
     position: relative;
@@ -394,4 +394,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .show{
     display: block;
+}
+.body{
+    border: inset;
+    border-color: #4d85ff;
 }
