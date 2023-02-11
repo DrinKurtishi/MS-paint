@@ -12,13 +12,13 @@
     <div class="bar-body-container">
     <div class="bar">
         <div class="bar-right">
-            <img src="images/paint-logo.png" width="30px">
+            <img src="images/paint-logo.png" width="30px" draggable="false">
             <p id="title">untitled - Paint</p>
         </div>
         <div class="bar-left">
-            <button class="control-buttons" id="minimize"><img src="images/minimize.png" width="25px"></button>
-            <button class="control-buttons" id="windowed"><img src="images/windowed.png" width="25px"></button>
-            <button class="control-buttons" id="close"><img src="images/close.png" width="25px"></button>
+            <button class="control-buttons" id="minimize"><img src="images/minimize.png" width="25px" draggable="false"></button>
+            <button class="control-buttons" id="windowed"><img src="images/windowed.png" width="25px" draggable="false"></button>
+            <button class="control-buttons" id="close"><img src="images/close.png" width="25px" draggable="false"></button>
         </div>
     </div>
     <div class="body">
@@ -37,10 +37,11 @@
 
 
                 <div class="About">
-                    <button id="about-button">About</button>
+                    <button id="about-button" class="dropbtn">About</button>
                     <div id="about-dropdown" class="dropdown-content">
-                        <p id="about-p">Author: Drin Kurtishi</p>
-                        Repo: <a href="https://github.com/DrinKurtishi/etch-a-sketch" target="_blank">github/etch-a-sketch</a>
+                        <p id="odin-p">This project is part of the Odin Project curriculum.</p>
+                        <p id="about-p">Author: Drin Kurtishi, 19, first year computer science </br> student at SEE University.</p>
+                        Repo: <a href="https://github.com/DrinKurtishi/etch-a-sketch" target="_blank" id="about-link">github/etch-a-sketch</a>
                     </div>
                 </div>
 
@@ -70,13 +71,13 @@
                 <div class="tools">
                     <div class="tool-buttons">
                         <div class="pencil">
-                            <button id="pencil-button"><img src="images/pencil.png"></button>
+                            <button id="pencil-button"><img src="images/pencil.png" draggable="false"></button>
                         </div>
                         <div class="eraser">
-                            <button id="eraser-button" value="rgb(255,255,255)"><img src="images/eraser.png"></button>
+                            <button id="eraser-button" value="rgb(255,255,255)"><img src="images/eraser.png" draggable="false"></button>
                         </div>
                         <div class="clear-canvas">
-                            <button id="clear-canvas-button"><img src="images/trash.png"></button>
+                            <button id="clear-canvas-button"><img src="images/trash.png" draggable="false"></button>
                         </div>
                     </div>
                 </div>
@@ -139,10 +140,10 @@
                 </div>
                 <div class="grid-bgcolor">
                     <div class="background-color">
-                        <button id="background-color" value="white"><img src="images/BgColor.png"></button>
+                        <button id="background-color" value="white"><img src="images/BgColor.png" draggable="false"></button>
                     </div>
                     <div  class="GridButton">
-                        <button id="GridButton"><img src="images/CloseGrid.png"></button>
+                        <button id="GridButton"><img src="images/CloseGrid.png" draggable="false"></button>
                     </div>
                     </div>
                 </div>

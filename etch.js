@@ -397,7 +397,7 @@ let helpButton = document.getElementById('help-button');
 let aboutFlag = false;
 let helpFlag = false;
 let aboutDropDown = document.getElementById('about-dropdown');
-
+//all this code does is add hover effect and removes it on hover, click and stuff
 aboutButton.addEventListener('mouseenter', () => {
     if(aboutFlag === false){
         aboutButton.style.border = "outset";
@@ -462,3 +462,18 @@ helpButton.addEventListener('click', () => {
         aboutFlag = false;
     }
 });
+//function to close an opened menu with a click anywhere on the screen
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+          aboutButton.style.border = "none";
+          aboutFlag = false;
+        }
+      }
+    }
+  }

@@ -372,8 +372,25 @@ input[type="range"]::-webkit-slider-thumb {
     min-width: 160px;
     z-index: 1;
 }
-#about-p{
+#about-p, #odin-p{
     margin: 0;
+}
+#about-p{
+    border-top: solid;
+    border-bottom: solid;
+    border-color: rgb(148, 148, 148);
+}
+#about-p, #odin-p, 
+#about-link{
+    padding: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#odin-p{
+    padding-top: 0px;
+}
+#about-link{
+    padding-bottom: 0px;
 }
 .show{
     display: block;
