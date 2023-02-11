@@ -410,9 +410,18 @@ aboutButton.addEventListener('mouseleave', () => {
 });
 
 aboutButton.addEventListener('click', () => {
-    aboutFlag = true;
     aboutButton.style.border = "inset"
     aboutButton.style.borderWidth = "2px";
+
+    if(aboutFlag == false){
+        aboutFlag = true;
+        aboutButton.style.border = "inset";
+        aboutButton.style.borderWidth = "2px";
+    }
+    else{
+        aboutFlag = false;
+        aboutButton.style.border = "none";
+    }
     if(helpFlag === true){
         helpButton.style.border = "none";
         helpFlag = false;
@@ -433,9 +442,15 @@ helpButton.addEventListener('mouseleave', () => {
 })
 
 helpButton.addEventListener('click', () => {
-    helpFlag = true;
-    helpButton.style.border = "inset";
-    helpButton.style.borderWidth = "2px";
+    if(helpFlag == false){
+        helpFlag = true;
+        helpButton.style.border = "inset";
+        helpButton.style.borderWidth = "2px";
+    }
+    else{
+        helpFlag = false;
+        helpButton.style.border = "none";
+    }
     if(aboutFlag === true){
         aboutButton.style.border = "none";
         aboutFlag = false;
