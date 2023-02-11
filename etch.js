@@ -396,6 +396,7 @@ let aboutButton = document.getElementById('about-button');
 let helpButton = document.getElementById('help-button');
 let aboutFlag = false;
 let helpFlag = false;
+let aboutDropDown = document.getElementById('about-dropdown');
 
 aboutButton.addEventListener('mouseenter', () => {
     if(aboutFlag === false){
@@ -417,10 +418,13 @@ aboutButton.addEventListener('click', () => {
         aboutFlag = true;
         aboutButton.style.border = "inset";
         aboutButton.style.borderWidth = "2px";
+        aboutDropDown.classList.toggle("show");
     }
     else{
         aboutFlag = false;
-        aboutButton.style.border = "none";
+        aboutButton.style.border = "outset";
+        aboutButton.style.borderWidth = "2px";
+        aboutDropDown.classList.remove("show");
     }
     if(helpFlag === true){
         helpButton.style.border = "none";
@@ -446,10 +450,12 @@ helpButton.addEventListener('click', () => {
         helpFlag = true;
         helpButton.style.border = "inset";
         helpButton.style.borderWidth = "2px";
+        aboutDropDown.classList.remove("show");
     }
     else{
         helpFlag = false;
-        helpButton.style.border = "none";
+        helpButton.style.border = "outset";
+        helpButton.style.borderWidth = "2px";
     }
     if(aboutFlag === true){
         aboutButton.style.border = "none";
